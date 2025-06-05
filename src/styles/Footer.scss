@@ -1,0 +1,18 @@
+.footer {
+  background-color: #000; // noir
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &_logo {
+    height: 40px;
+  }
+
+  &_text {
+    font-size: 0.875rem;
+  }
+}
