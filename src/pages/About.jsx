@@ -1,8 +1,11 @@
+import BannerAbout from '../components/BannerAbout'
+import AboutAccordion from '../components/Dropdown'
+
 function About() {
   return (
-    <div>
-      <h2>À propos</h2>
-      <p>Bienvenue sur la page À propos !</p>
+    <div className="about">
+      <BannerAbout />
+      <AboutAccordion />
     </div>
   );
 }
