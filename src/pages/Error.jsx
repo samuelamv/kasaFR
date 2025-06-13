@@ -1,8 +1,8 @@
+import ErrorComponent from '../components/Error'
 function Error() {
   return (
     <div>
-      <h2>Error</h2>
-      <p>Contenu de la page Error</p>
+      <ErrorComponent />
     </div>
   );
 }

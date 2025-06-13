@@ -1,0 +1,53 @@
+.info-location{
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin: 0 100px;
+
+    &_left {
+        max-width: 70%;
+    }
+
+    &_title {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 36px;
+        letter-spacing: 0%;
+        color: #FF6060;
+    }
+    
+    &_location {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 143%;
+        letter-spacing: 0%;
+        color: black;
+    }
+
+        &_host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &_host-name {
+        color: #ff6060;
+        text-align: right;
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 143%;
+        letter-spacing: 0%;
+        text-align: right;
+        vertical-align: bottom;
+
+    }
+
+    &_host-picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
