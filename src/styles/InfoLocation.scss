@@ -1,53 +1,194 @@
-.info-location{
+/*$breakpoint-mobile: 600px;
+$breakpoint-tablet: 900px;
+$breakpoint-medium: 1280px;
+
+.info-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 100px;
+
+  &_left {
+    max-width: 70%;
+  }
+
+  &_title {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: 0%;
+    color: #FF6060;
+  }
+  
+  &_location {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 143%;
+    letter-spacing: 0%;
+    color: black;
+  }
+
+  &_host {
     display: flex;
-    justify-content:  space-between;
     align-items: center;
+    gap: 10px;
+  }
+
+  &_host-name {
+    width: 100px;
+    color: #ff6060;
+    text-align: right;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 143%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+  }
+
+  &_host-picture {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  // Responsive styles
+
+  @media (max-width: $breakpoint-medium) {
     margin: 0 100px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: none;
+    align-items: none;
+    margin: 0 30px;
+    gap: 0;
+    display: block;
 
     &_left {
-        max-width: 70%;
+      max-width: 70%;
     }
 
-    &_title {
-        font-family: Montserrat;
-        font-weight: 500;
-        font-size: 36px;
-        letter-spacing: 0%;
-        color: #FF6060;
-    }
-    
-    &_location {
-        font-family: Montserrat;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 143%;
-        letter-spacing: 0%;
-        color: black;
-    }
-
-        &_host {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    &_host {
+      position: absolute;
+      width: 100px;
+      left: 580px;
+      top: 720px;
     }
 
     &_host-name {
-        color: #ff6060;
-        text-align: right;
-        font-family: Montserrat;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 143%;
-        letter-spacing: 0%;
-        text-align: right;
-        vertical-align: bottom;
+      text-align: left;
+      font-size: 16px;
+    }
+  }
 
+  @media (max-width: $breakpoint-mobile) {
+    margin: 15px 20px;
+
+    &_title {
+      font-size: 28px;
+    }
+    &_left {
+      max-width: 100%;
+    }
+    &_location {
+      font-size: 16px;
     }
 
     &_host-picture {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        object-fit: cover;
+      width: 48px;
+      height: 48px;
     }
+
+    &_host {
+      position: absolute;
+      width: 100px;
+      left: 275px;
+      top: 660px;
+    }
+
+    &_host-name {
+      font-size: 14px;
+    }
+  }
+}*/
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 900px;
+$breakpoint-medium: 1280px;
+
+.info-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 100px;
+
+  &_left {
+    max-width: 70%;
+  }
+
+  &_title {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: 0%;
+    color: #FF6060;
+  }
+
+  &_location {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 143%;
+    color: black;
+  }
+
+  &_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  &_tag {
+    background-color: #ff6060;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  // Responsive styles
+  @media (max-width: $breakpoint-medium) {
+    margin: 0 100px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+    margin: 0 30px;
+
+    &_left {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 15px 20px;
+
+    &_title {
+      font-size: 28px;
+    }
+
+    &_location {
+      font-size: 16px;
+    }
+
+    &_tag {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+    }
+  }
 }
+

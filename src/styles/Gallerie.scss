@@ -1,51 +1,123 @@
+$gallery-card-size: 340px;
+$gallery-bg: #f6f6f6;
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 900px;
+$breakpoint-medium: 1280px;
+
 .gallery {
-  background-color: #f6f6f6;
+  background-color: $gallery-bg;
   padding: 50px;
-  margin:  0 100px 50px 100px;
+  margin: 0 100px 50px 100px;
   border-radius: 25px;
 
   .gallery_container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($gallery-card-size, 1fr));
     column-gap: 60px;
     row-gap: 50px;
     justify-content: center;
     max-width: 1240px;
     margin: 0 auto;
+    justify-items: center; // évite les cartes alignées à gauche quand il reste trop de place
   }
 
   .gallery_card {
-    width: 340px;
-    height: 340px;
+    width: $gallery-card-size;
+    height: $gallery-card-size;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
     color: white;
     display: block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery_image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .gallery_overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0) 42%,
+        rgba(4, 4, 4, 0.205) 99.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      z-index: 0;
+    }
+
+    .gallery_title {
+      position: absolute;
+      bottom: 0px;
+      left: 20px;
+      right: 20px;
+      font-size: 1.25rem;
+      z-index: 1;
+      line-height: 1.4;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    }
   }
 
-  .gallery_image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  // 💡 BREAKPOINT 1280px : Réduire taille carte et écart
+  @media (max-width: $breakpoint-medium) {
+    margin: 0 60px 50px 60px;
+    padding: 40px;
+
+    .gallery_container {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      column-gap: 40px;
+      row-gap: 40px;
+    }
+
+    .gallery_card {
+      width: 100%;
+      height: 300px;
+    }
   }
 
-  .gallery_overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+  // 💡 TABLETTE
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 40px 40px 40px;
+    padding: 30px;
+
+    .gallery_container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      column-gap: 30px;
+      row-gap: 30px;
+    }
+
+    .gallery_card {
+      height: 260px;
+    }
   }
 
-  .gallery_title {
-  position: absolute;
-  bottom: 0px;
-  left: 20px;
-  right: 20px;
-  font-size: 1.25rem;
-  z-index: 1;
-  line-height: 1.4;
-}
+  // 💡 MOBILE
+  @media (max-width: $breakpoint-mobile) {
+    margin: 0 20px 30px 20px;
+    padding: 20px;
+
+    .gallery_container {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    .gallery_card {
+      height: 240px;
+    }
+
+    .gallery_title {
+      font-size: 1rem;
+    }
+  }
 }
